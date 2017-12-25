@@ -54,10 +54,9 @@ https://docs.influxdata.com/influxdb/v0.9/introduction/installation/
  > create database GeodeJmx
  
  > show databases
- 
+  
   name: databases
-  name
-  ----
+
   _internal
   GeodeJmx
   
