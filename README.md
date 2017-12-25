@@ -50,8 +50,11 @@ https://docs.influxdata.com/influxdb/v0.9/introduction/installation/
 ##### Connect influx DB
 
  > influx
+ 
  > create database GeodeJmx
+ 
  > show databases
+ 
   name: databases
   name
   ----
