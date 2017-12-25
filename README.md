@@ -24,6 +24,69 @@ about the distributed system. This statistics is persisted in local archive file
 Use the [statistics-to-grafana](./statistics-to-grafana) tool to convert the archive files into InfluxDB time-series database. 
 Use Grafana to build comprehensive dashboards from the statistics time-series. 
 
+## Installation Steps
+
+#### Start gemfire Server
+
+![Gemfire Server](./doc/demo/gfsh.png.png)
+
+#### Install Time-Serious DB InfluxDB
+
+Follow below link to install InfluxDB
+
+https://docs.influxdata.com/influxdb/v0.9/introduction/installation/
+
+>brew update
+>brew install influxdb
+
+##### To have launchd start influxdb now and restart at login:
+
+  >brew services start influxdb
+  
+##### Or, if you don't want/need a background service you can just run:
+
+  >influxd -config /usr/local/etc/influxdb.conf
+  
+##### Connect influx DB
+
+ > influx
+ > create database GeodeJmx
+ > show databases
+  name: databases
+  name
+  ----
+  _internal
+  GeodeJmx
+  
+#### Install Grafna
+
+http://docs.grafana.org/installation/
+
+>brew update
+>brew install grafana
+
+To have launchd start grafana now and restart at login:
+  brew services start grafana
+Or, if you don't want/need a background service you can just run:
+  grafana-server --config=/usr/local/etc/grafana/grafana.ini --homepath /usr/local/share/grafana cfg:default.paths.logs=/usr/local/var/log/grafana cfg:default.paths.data=/usr/local/var/lib/grafana cfg:default.paths.plugins=/usr/local/var/lib/grafana/plugins
+
+>brew services start grafana
+
+go to browser and type bleow URL after starting grafna service
+
+http://localhost:3000/
+
+credential = admin/admin
+
+#### Configure Grafna and start jmx-to-grafna service
+Follow this steps to configure and start jmx-to-grafna
+https://github.com/kaleeswaran393/gemfire-monitoring/tree/master/jmx-to-grafana
+
+#### Configure Grafna and start statitics-to-grafna service
+Follow this steps to configure and start statitic-to-grafna
+
+https://github.com/kaleeswaran393/gemfire-monitoring/tree/master/statistics-to-grafana
+
 
 ## Toolset
 #### [Geode JMX To Grafana](./jmx-to-grafana) 
