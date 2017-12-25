@@ -8,7 +8,9 @@ and historical ([statistics-to-grafana](./statistics-to-grafana)) metrics monito
 
 ## Architecture
 As illustrated on the diagram below, the `Geode Grafana` toolset provides unified technical stack for visualizing 
-and analysing both `Real-Time` (e.g JMX metrics) and `Historical` (archive files) cluster statistics.  
+and analysing both `Real-Time` (e.g JMX metrics) and `Historical` (archive files) cluster statistics. 
+
+![Apache Geode Grafana Dashboards Architecture](./doc/GeodeDashboardArchitecture.png)
 
 ###### Geode JMX Metrics Analysis
 Geode implements federated `JMX` architecture to manage and monitor all members of the distributed system. 
@@ -21,8 +23,7 @@ Geode collects [detailed statistics](http://geode.apache.org/docs/guide/managing
 about the distributed system. This statistics is persisted in local archive files by each cluster member. 
 Use the [statistics-to-grafana](./statistics-to-grafana) tool to convert the archive files into InfluxDB time-series database. 
 Use Grafana to build comprehensive dashboards from the statistics time-series. 
- 
-![Apache Geode Grafana Dashboards Architecture](./doc/GeodeDashboardArchitecture.png)
+
 
 ## Toolset
 #### [Geode JMX To Grafana](./jmx-to-grafana) 
