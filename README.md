@@ -1,7 +1,7 @@
 # Tools used to monitor gemfire
    1. JConsole
    
-   2. gemfire file tool
+   2. Gemfire pulse tool
    
    3. https://github.com/tzolov/geode-dashboard
    
