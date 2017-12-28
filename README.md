@@ -1,3 +1,11 @@
+# Tools used to monitor gemfire
+   1. JConsole
+   2. gemfire file tool
+   3.https://github.com/tzolov/geode-dashboard
+           1. jmx-to-grafna
+           2. statitics-to-grafna (http://gemfire.docs.pivotal.io/gemfire/tools_modules/vsd/running_vsd.html)
+
+
 # Apache Geode - Grafana Dashboard
 
 Utility tools for analysing and visualising [Apache Geode](http://geode.apache.org/) `historical` and `real-time` 
