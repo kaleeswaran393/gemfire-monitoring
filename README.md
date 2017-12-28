@@ -3,7 +3,7 @@
    
    2. gemfire file tool
    
-   3.https://github.com/tzolov/geode-dashboard
+   3. https://github.com/tzolov/geode-dashboard
    
            1. jmx-to-grafna
            
