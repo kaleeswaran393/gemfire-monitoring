@@ -5,29 +5,37 @@
         We can connect each server node separatly to monitor
    
 2. Gemfire pulse tool 
-        gemfire itself provide this tool to query gemfire in-memory data and also provides limited info about server c
+        gemfire itself provide this tool to query gemfire in-memory data and also provides limited info about server
    
-3. https://github.com/tzolov/geode-dashboard  
-        This project help us to view the status of all the server in a single dashboar with help of influxDB and Grafna UI for   dashboard. It is very usefull tool for monitoring.
+3. https://github.com/tzolov/geode-dashboard  (**Apache Geode - Grafana Dashboard**)
+
+        This project help us to view health status of server in a single dashboard with help of time serious influxDB and Grafna UI for  cool dashboard.It is very usefull tool for monitoring all server in a aggregated view.
    
            1. jmx-to-grafna
+                          This project connect gemfire locator and get all gemfire server details, these details is stored into influxDB and then Grafna is connecting to this db to get data. Please refer the below document for installation.
+            
+           2. statitics-to-grafna 
            
-           2. statitics-to-grafna (http://gemfire.docs.pivotal.io/gemfire/tools_modules/vsd/running_vsd.html)
+                You have to run this project to veiw realtime statitics in grafna. we have install gemfire VSD binary project inside extsing gemfire installtion path. please refer this link for more details  (http://gemfire.docs.pivotal.io/gemfire/tools_modules/vsd/running_vsd.html)
 
+                You have to run VSD tool to write statistic data into file and we have to mention this file while this java project. this java project would read this .gsd file and store data in inflexDB and then grafana connect this db to display data in grafana.
+ 
+ We will see how to use Gafana dashboard for gemfire monitoring, below are the steps
 
 # Apache Geode - Grafana Dashboard
-
-Utility tools for analysing and visualising [Apache Geode](http://geode.apache.org/) `historical` and `real-time` 
-metrics with [Grafana](https://grafana.net/). Two sub-projects aim to provide real-time ([jmx-to-grafana](./jmx-to-grafana)) 
-and historical ([statistics-to-grafana](./statistics-to-grafana)) metrics monitoring.
-
-![Apache Geode Grafana Dashboards](./doc/geode-dashboards.png)
 
 ## Architecture
 As illustrated on the diagram below, the `Geode Grafana` toolset provides unified technical stack for visualizing 
 and analysing both `Real-Time` (e.g JMX metrics) and `Historical` (archive files) cluster statistics. 
 
 ![Apache Geode Grafana Dashboards Architecture](./doc/GeodeDashboardArchitecture.png)
+
+
+Utility tools for analysing and visualising [Apache Geode](http://geode.apache.org/) `historical` and `real-time` 
+metrics with [Grafana](https://grafana.net/). Two sub-projects aim to provide real-time ([jmx-to-grafana](./jmx-to-grafana)) 
+and historical ([statistics-to-grafana](./statistics-to-grafana)) metrics monitoring.
+
+![Apache Geode Grafana Dashboards](./doc/geode-dashboards.png)
 
 ###### Geode JMX Metrics Analysis
 Geode implements federated `JMX` architecture to manage and monitor all members of the distributed system. 
@@ -52,20 +60,23 @@ Use Grafana to build comprehensive dashboards from the statistics time-series.
 Follow below link to install InfluxDB
 
 https://docs.influxdata.com/influxdb/v0.9/introduction/installation/
+```
 
 >brew update
 >brew install influxdb
 
+```
+
 ##### To have launchd start influxdb now and restart at login:
-
+```
   >brew services start influxdb
-  
+```  
 ##### Or, if you don't want/need a background service you can just run:
-
+```
   >influxd -config /usr/local/etc/influxdb.conf
-  
+ ``` 
 ##### Connect influx DB
-
+```
  > influx
  
  > create database GeodeJmx
@@ -76,21 +87,21 @@ https://docs.influxdata.com/influxdb/v0.9/introduction/installation/
 
   _internal
   GeodeJmx
-  
+```  
 #### Install Grafna
 
 http://docs.grafana.org/installation/
-
+```
 >brew update
 >brew install grafana
-
+```
 To have launchd start grafana now and restart at login:
   brew services start grafana
 Or, if you don't want/need a background service you can just run:
   grafana-server --config=/usr/local/etc/grafana/grafana.ini --homepath /usr/local/share/grafana cfg:default.paths.logs=/usr/local/var/log/grafana cfg:default.paths.data=/usr/local/var/lib/grafana cfg:default.paths.plugins=/usr/local/var/lib/grafana/plugins
-
+```
 >brew services start grafana
-
+```
 go to browser and type bleow URL after starting grafna service
 
 http://localhost:3000/
