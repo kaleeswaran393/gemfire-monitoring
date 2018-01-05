@@ -1,9 +1,14 @@
 # Tools used to monitor gemfire
-   1. JConsole
+  Gemfire is JVM based server can be monitored in different ways. Since gemfire supports jmx can monitor gemfire server by connecting jmx port. 
+
+1. JConsole/JVisualVm  
+        We can connect each server node separatly to monitor
    
-   2. Gemfire pulse tool
+2. Gemfire pulse tool 
+        gemfire itself provide this tool to query gemfire in-memory data and also provides limited info about server c
    
-   3. https://github.com/tzolov/geode-dashboard
+3. https://github.com/tzolov/geode-dashboard  
+        This project help us to view the status of the all the server in a single dashboar with help of influxDB and Grafna UI for   dashboard. It is very usefull tool for monitoring.
    
            1. jmx-to-grafna
            
