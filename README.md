@@ -86,7 +86,7 @@ https://docs.influxdata.com/influxdb/v0.9/introduction/installation/
   _internal
   GeodeJmx
 ```  
-#### Install Grafna
+#### Install Grafana
 
 http://docs.grafana.org/installation/
 ```
@@ -106,11 +106,11 @@ http://localhost:3000/
 
 credential = admin/admin
 
-#### Configure Grafna and start jmx-to-grafna service
+#### Configure Grafana and start jmx-to-grafana service
 Follow this steps to configure and start jmx-to-grafna
 https://github.com/kaleeswaran393/gemfire-monitoring/tree/master/jmx-to-grafana
 
-#### Configure Grafna and start statitics-to-grafna service
+#### Configure Grafana and start statitics-to-grafana service
 Follow this steps to configure and start statitic-to-grafna
 
 https://github.com/kaleeswaran393/gemfire-monitoring/tree/master/statistics-to-grafana
