@@ -2,7 +2,7 @@
   Gemfire is JVM based server can be monitored in different ways. Since gemfire supports jmx can monitor gemfire server by connecting jmx port. 
 
 1. **JConsole/JVisualVm**  
-        We can connect each server node separatly to monitor
+        We can connect each server node separatly to monitor using jmx url
    
 2. **Gemfire pulse tool**
 
