@@ -8,7 +8,7 @@
         gemfire itself provide this tool to query gemfire in-memory data and also provides limited info about server c
    
 3. https://github.com/tzolov/geode-dashboard  
-        This project help us to view the status of the all the server in a single dashboar with help of influxDB and Grafna UI for   dashboard. It is very usefull tool for monitoring.
+        This project help us to view the status of all the server in a single dashboar with help of influxDB and Grafna UI for   dashboard. It is very usefull tool for monitoring.
    
            1. jmx-to-grafna
            
