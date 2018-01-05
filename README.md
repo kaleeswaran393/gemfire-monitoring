@@ -8,12 +8,13 @@
         gemfire itself provide this tool to query gemfire in-memory data and also provides limited info about server
    
 3. https://github.com/tzolov/geode-dashboard  (**Apache Geode - Grafana Dashboard**)
+
   This project help us to view health status of server in a single dashboard with help of time serious influxDB and Grafna UI for  cool dashboard.It is very usefull tool for monitoring all server in a aggregated view.
 
-  1. jmx-to-grafna
+  -  jmx-to-grafna
          This project connect gemfire locator and get all gemfire server details, these details is stored into influxDB and then Grafna is connecting to this db to get data. Please refer the below document for installation.
  
-  2. statitics-to-grafna 
+  -  statitics-to-grafna 
          You have to run this project to veiw realtime statitics in grafna. we have install gemfire VSD binary project inside extsing gemfire installtion path. please refer this link for more details  (http://gemfire.docs.pivotal.io/gemfire/tools_modules/vsd/running_vsd.html
          You have to run VSD tool to write statistic data into file and we have to mention this file while this java project. this java project would read this .gsd file and store data in inflexDB and then grafana connect this db to display data in grafana.
          
